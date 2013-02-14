@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>YoungWorkers</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+		<title>Young Worker Project</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="container">
+			<!-- alerts -->
+		<% unless flash.empty? %>
+		<% flash.each do |key, value| %>
+		<%= content_tag :div, value, :class => "flash #{key}" %>
+		<% end %>
+		<% end %>
+		<%= yield %>
+		</div>
+	</body>
 </html>

@@ -1,0 +1,20 @@
+<%= form_for(@content) do |f| %>
+<p>
+	Title
+	<%= f.text_field :title %>
+</p>
+<p>
+	Brief description of interviewee
+	<%= f.text_area :description %>
+</p>
+<p>
+	Excerpt for landing page
+	<%= f.text_area :quote %>
+<p>
+	Interview transcription
+	<%= f.text_area :body %>
+<p>
+<p>
+	<%= f.submit %>
+</p>
+<% end %>
