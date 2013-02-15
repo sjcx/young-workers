@@ -1,20 +1,9 @@
-<%= form_for(@content) do |f| %>
-<p>
-	Title
-	<%= f.text_field :title %>
-</p>
-<p>
-	Brief description of interviewee
-	<%= f.text_area :description %>
-</p>
-<p>
-	Excerpt for landing page
-	<%= f.text_area :quote %>
-<p>
-	Interview transcription
-	<%= f.text_area :body %>
-<p>
-<p>
-	<%= f.submit %>
-</p>
+<%= simple_form_for(@content, :html => { :class => "form-horizontal" } ) do |f| %>
+<fieldset>
+	<%= f.input :title, label: 'Title' %>
+	<%= f.input :description, placeholder: 'This description appears in bold at the top of the full transcript. (3-4 sentences)', input_html: { class: 'input-xxlarge', rows: '4' } %>
+	<%= f.input :quote, label: 'Homepage Teaser', placeholder: 'This text appears on the homepage before the jump to the full transcript. (4-6 sentences)', input_html: { class: 'input-xxlarge', rows: '4' } %>
+	<%= f.input :body, placeholder: 'Use HTML tags to bold any interviewer questions.', input_html: { class: 'input-xxlarge' } %>
+	<%= f.button :submit %>
+</fieldset>
 <% end %>
