@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Young Worker Project</title>
+		<title>Young &amp; Working</title>
 		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
 		<div class="container">
 			<!-- alerts -->
-		<% unless flash.empty? %>
-		<% flash.each do |key, value| %>
-		<%= content_tag :div, value, :class => "flash #{key}" %>
-		<% end %>
-		<% end %>
-		<%= yield %>
+			<% unless flash.empty? %>
+			<% flash.each do |key, value| %>
+			<%= content_tag :div, value, :class => "flash #{key}" %>
+			<% end %>
+			<% end %>
+			<%= yield %>
 		</div>
 	</body>
 </html>

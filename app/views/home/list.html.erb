@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h3><%= raw @content.title %></h3>
+	<h3>Interviews</h3>
 </div>
 <!-- header links -->
 <div class="pull-right">
@@ -14,17 +14,15 @@
 	</p>
 </div>
 <!-- body -->
-<div class="row-fluid">
-	<div class="span6 offset3">
-		<p class="lead">
-			<%= raw @content.description%>
-		</p>
-		<p>
-			<%= raw @content.body %>
-		</p>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+			<% @contents.each do |content| %>
+			<p>
+				<a href="/contents/<%= content.id %>"><%= raw content.title  %></a> (<%= content.created_at.strftime('%B %e, %Y') %>)
+			</p>
+
+			<% end %>
+		</div>
 	</div>
 </div>
-<div class="text-center">
-	<% link_to 'Home', root_path %>
-</div>
-

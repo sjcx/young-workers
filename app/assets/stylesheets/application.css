@@ -13,3 +13,17 @@
  *= require twitter/bootstrap/_responsive
  *= require_tree .
 */
+
+.container {
+	font-family: 'Cantarell', sans-serif;
+}
+.logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 300px;
+}
+.table.footer {
+	text-align: center;
+}

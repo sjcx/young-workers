@@ -1,1 +1,39 @@
-<h1>Coming soon...</h1>
+<!-- body -->
+<!-- header links -->
+<div class="pull-right">
+	<p class="text-right">
+		<br \>
+		<br \>
+		<a href="/about-us">ABOUT</a>
+		<br \>
+		<a href="/list-of-interviews">INTERVIEW INDEX</a>
+		<br \>
+		<a href="/apply">TELL YOUR STORY!</a>
+	</p>
+</div>
+<%= image_tag 'young and working.png', :class => 'logo' %> 
+<div class="row-fluid">
+	<div class="span6 offset3">
+		<table class="table">
+			<tr>
+				<% @contents.each do |content| %>
+				<td>
+					<br />
+					<br />
+				<p>
+					<small><%= content.title.upcase %></small>
+				</p>
+				<p class="lead">
+					"<%= raw content.quote %>"
+				</p>
+				<div class="pull-right">
+					<p>
+						<small><%= link_to 'READ MORE', content_path(content.id) %></small>
+				</div></td>
+			</tr>
+			<% end %>
+
+		</table>
+		<%= paginate @contents %>
+	</div>
+</div>
