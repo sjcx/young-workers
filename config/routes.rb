@@ -1,11 +1,11 @@
 YoungWorkers::Application.routes.draw do
+  resources :submissions
   devise_for :admins
-
   resources :contents
   root :to => "home#index"
-  match '/about-us' => 'home#about-us'
+  match '/about' => 'home#about-us'
   match '/list-of-interviews' => 'home#list'
-  match '/apply' => 'home#apply'
+  match '/apply' => 'submissions#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
