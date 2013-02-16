@@ -1,7 +1,7 @@
 class SubmissionsController < ApplicationController
    
   def index
-    @submissions = Submission.all(:order => "created_at DESC")
+    @submissions = Submission.order("created_at DESC").page(params[:page]).per(10)
   end
   
   def new
@@ -32,8 +32,8 @@ class SubmissionsController < ApplicationController
   def update
     @submission = Submission.find(params[:id])
     respond_to do |format|
-      if @submission.update_attributes(params[:content])
-        format.html { redirect_to root_url, notice: 'Submission was successfully updated.' }
+      if @submission.update_attributes(params[:submission])
+        format.html { redirect_to "/submissions", notice: 'Submission was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

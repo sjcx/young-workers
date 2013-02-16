@@ -15,12 +15,25 @@
 </div>
 <!-- body -->
 <p class="lead">
-	Thanks for your interest in collaborating with us!  Please complete the form below, and we'll contact you within 
-	a few weeks if we're able to interview you.</p>
-	<p class="text-warning">
-		Please note that Young &amp; Working is currently based in New York and San Francisco and prefers to interview
-		collaborators in person.  Shoot us an <a href="mailto:contact@youngandworking.com">email</a> if you're somewhere else,
-		or watch the homepage; we'll announce when we're traveling.</p> 
-		<br \>
-		<br \>
-<%= render 'form' %>
+	Thanks for your interest in collaborating with us!  Please complete the form below, and we'll contact you within
+	a few weeks if we're able to interview you.
+</p>
+<p class="text-warning">
+	Please note that Young &amp; Working is currently based in New York and San Francisco and prefers to interview
+	collaborators in person.  Shoot us an <a href="mailto:contact@youngandworking.com">email</a> if you're somewhere else,
+	or watch the homepage; we'll announce when we're traveling.
+</p>
+<br \>
+<br \>
+<!-- form -->
+<%= simple_form_for(@submission, :html => { :class => "form-horizontal" } ) do |f| %>
+<fieldset>
+	<%= f.input :name, placeholder: 'We\'ll keep your real name confidential, or you can use an alias.', input_html: { class: 'input-xxlarge', rows: '4' } %>
+	<%= f.input :email, required: true %>
+	<%= f.input :age,  collection: 10..35, hint: 'Please be 35 or younger; we’re down with all workers, but this project has a specific scope.' %>
+	<%= f.input :job, placeholder: 'Give us a sense of your current and/or past work in a few sentences.', input_html: { class: 'input-xxlarge', rows: '6' }%>
+	<%= f.input :demographic, label: 'Demographic info (optional)', required: false, placeholder: 'Any info you wish to provide about your race, gender, sexual preference, family background, etc. is helpful to us in ensuring the diversity of the project.', input_html: { class: 'input-xxlarge', rows: '6' } %>
+	<%= f.input :location, collection: ["New York", "San Francisco"] %>
+	<%= f.button :submit %>
+</fieldset>
+<% end %>
