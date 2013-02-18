@@ -13,6 +13,8 @@
 			<div class="pull-right">
 				<% if admin_signed_in? %>
 				Logged in as <%= current_admin.email %>&nbsp;&nbsp;||&nbsp;&nbsp;
+				<%= link_to('Manage Content', contents_path) %> &nbsp;&nbsp;||&nbsp;&nbsp;
+				<%= link_to('Manage Submissions', submissions_path) %>&nbsp;&nbsp;||&nbsp;&nbsp;
 				<%= link_to('Logout', destroy_admin_session_path, :method => :delete ) %>
 				<% end %>
 			</div>
