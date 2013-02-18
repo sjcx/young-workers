@@ -10,12 +10,14 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="pull-right">
+				<% if admin_signed_in? %>
+				Logged in as <%= current_admin.email %>&nbsp;&nbsp;||&nbsp;&nbsp;
+				<%= link_to('Logout', destroy_admin_session_path, :method => :delete ) %>
+				<% end %>
+			</div>
 			<!-- alerts -->
-			<% unless flash.empty? %>
-			<% flash.each do |key, value| %>
-			<%= content_tag :div, value, :class => "flash #{key}" %>
-			<% end %>
-			<% end %>
+			<%= render 'layouts/flash_messages'  %>
 			<%= yield %>
 		</div>
 	</body>

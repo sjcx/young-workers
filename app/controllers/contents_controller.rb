@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-
+  before_filter :bounce, :except => [:show]
   
   def index
     @contents = Content.all(:order => "created_at DESC")

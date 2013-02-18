@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+   before_filter :bounce, :except => [:new]  
    
   def index
     @submissions = Submission.order("created_at DESC").page(params[:page]).per(10)
