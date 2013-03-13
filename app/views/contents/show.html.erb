@@ -12,7 +12,7 @@
 		}(document, 'script', 'facebook-jssdk')); 
 </script>
 <div class="page-header">
-	<h3><%= raw @content.title %></h3>
+	<h3>#<%= @content.id %>, <%= raw @content.title %></h3>
 </div>
 <!-- header links -->
 <div class="pull-right" id "sidebar">
@@ -32,9 +32,9 @@
 		<p class="lead">
 			<%= raw @content.description%>
 		</p>
-		<p>
+		<div>
 			<%= raw @content.body %>
-		</p>
+		</div>
 		<!-- social media -->
 		<div class="text-center">
 			<hr \>
