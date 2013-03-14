@@ -18,15 +18,14 @@
 			<tr>
 				<% @contents.each do |content| %>
 				<td>
-				<br />
-				<br />
-				<div class = "today">
+				<div class="today">
 					<div id="<%= content.created_at.strftime("%d-%m-%Y") %>">
-						<p class = >
+						<span class="badge badge-info" >
 							new!
-						</p>
+						</span>
 					</div>
 				</div>
+				<br/>
 				<p>
 					<small>#<%= content.number%>, <%= content.title.upcase %></small>
 				</p>
