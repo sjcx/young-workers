@@ -11,15 +11,22 @@
 		<a href="/apply">TELL YOUR STORY!</a>
 	</p>
 </div>
-<%= image_tag 'young and working.png', :class => 'logo' %> 
+<%= image_tag 'young and working.png', :class => 'logo' %>
 <div class="row-fluid">
 	<div class="span6 offset3">
 		<table class="table">
 			<tr>
 				<% @contents.each do |content| %>
 				<td>
-					<br />
-					<br />
+				<br />
+				<br />
+				<div class = "today">
+					<div id="<%= content.created_at.strftime("%d-%m-%Y") %>">
+						<p class = >
+							new!
+						</p>
+					</div>
+				</div>
 				<p>
 					<small>#<%= content.number%>, <%= content.title.upcase %></small>
 				</p>
@@ -37,3 +44,5 @@
 		<%= paginate @contents %>
 	</div>
 </div>
+
+
