@@ -12,17 +12,17 @@
 	</p>
 </div>
 <%= image_tag 'young and working.png', :class => 'logo' %>
+<!-- content -->
 <div class="row-fluid">
 	<div class="span6 offset3">
 		<table class="table">
 			<tr>
 				<% @contents.each do |content| %>
 				<td>
+				<br />
 				<div class="today">
 					<div id="<%= content.created_at.strftime("%d-%m-%Y") %>">
-						<span class="badge badge-info" >
-							new!
-						</span>
+						<span class="badge badge-info" > new! </span>
 					</div>
 				</div>
 				<br/>
@@ -35,13 +35,14 @@
 				<div class="pull-right">
 					<p>
 						<small><%= link_to 'READ MORE', content_path(content.id) %></small>
+					</p>
 				</div></td>
 			</tr>
 			<% end %>
-
 		</table>
-		<%= paginate @contents %>
+		<div class="pull-right">
+			<%= paginate @contents %>
+		</div>
 	</div>
 </div>
-
 
