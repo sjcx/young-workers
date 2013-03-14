@@ -1,6 +1,7 @@
 <%= simple_form_for(@content, :html => { :class => "form-horizontal" } ) do |f| %>
 <fieldset>
 	<%= f.input :title, label: 'Title', placeholder: 'Urologist' %>
+	<%= f.input :number, label: 'Interview Number', placeholder: '1, 2, 3...'%>
 	<%= f.input :description, placeholder: 'This description appears at the top of the full transcript. (3-4 sentences)', input_html: { class: 'input-xxlarge', rows: '4' } %>
 	<%= f.input :quote, label: 'Homepage Teaser', placeholder: 'This text appears on the homepage before the jump to the full transcript. (4-6 sentences)', input_html: { class: 'input-xxlarge', rows: '4' } %>
 	<%= f.input :body, placeholder: 'Use <b> tags to bold any interviewer questions. Use <p> tags to enclose paragraphs.', input_html: { class: 'input-xxlarge' } %>

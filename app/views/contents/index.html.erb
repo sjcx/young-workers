@@ -6,6 +6,7 @@
 		<table class="table table-hover">
 			<% @contents.each do |content| %>
 			<tr>
+				<td>(<%= content.number %>)</td>
 				<td><%= raw content.title  %></td>
 				<td><%= link_to "Show", url_for(content) %></td>
 				<td><%= link_to "Delete", content_path(content), :method => :delete %></td>
